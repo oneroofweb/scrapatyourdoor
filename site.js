@@ -26,6 +26,32 @@
     }
   }
 
+  function formatTodayIndia() {
+    const now = new Date();
+    try {
+      return new Intl.DateTimeFormat("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        timeZone: "Asia/Kolkata"
+      }).format(now);
+    } catch (_) {
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
+    }
+  }
+
+  function updateRateDates() {
+    const stamps = document.querySelectorAll("[data-rate-date]");
+    if (!stamps.length) return;
+
+    const todayLabel = formatTodayIndia();
+    for (let i = 0; i < stamps.length; i++) {
+      stamps[i].textContent = todayLabel;
+    }
+  }
+
   setupMobileMenuClose();
   resolveLocalFolderLinks();
+  updateRateDates();
 })();

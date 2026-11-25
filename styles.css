@@ -186,20 +186,20 @@ html{scroll-padding-top:12px}
 .rate-card-body{padding:12px 14px 14px;display:flex;flex-direction:column;justify-content:space-between;gap:8px;flex:1}
 .rate-card-title{font-size:1.08rem;font-weight:700;line-height:1.2;color:var(--board-ink);margin:0}
 .rate-card-hi{display:block;font-size:.88rem;font-weight:500;color:var(--board-muted);margin-top:3px}
-.rate-card-price{font-family:var(--f-display);font-weight:600;font-size:1.95rem;color:var(--yellow);line-height:.95;margin:0;white-space:nowrap;font-variant-numeric:tabular-nums}
+.rate-card-price{font-family:var(--f-display);font-weight:600;font-size:clamp(1.6rem,3vw,1.9rem);color:var(--yellow);line-height:.95;margin:0;white-space:nowrap;font-variant-numeric:tabular-nums}
 .rate-card-price small{font-family:var(--f-body);font-size:.8rem;font-weight:500;color:var(--board-unit);margin-left:2px}
 
 /* Compact horizontal cards for mini board (Sell Old AC hero) */
 .rate-mini-list{display:grid;gap:12px;margin:14px 0 16px}
 .rate-card-mini{flex-direction:row;align-items:stretch}
 .rate-card-mini .rate-card-media{width:104px;flex:none;aspect-ratio:4/3;border-bottom:0;border-right:2px solid var(--board-dot)}
-.rate-card-mini .rate-card-body{padding:10px 12px;flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+.rate-card-mini .rate-card-body{padding:10px 12px;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px}
 @media (max-width:575.98px){
   .rate-card-body{padding:10px 10px 12px}
   .rate-card-title{font-size:1rem}
-  .rate-card-price{font-size:1.55rem}
+  .rate-card-price{font-size:1.38rem;white-space:normal}
+  .rate-card-price small{font-size:.74rem}
   .rate-card-mini .rate-card-media{width:88px}
-  .rate-card-mini .rate-card-body{flex-direction:column;align-items:flex-start;gap:4px}
 }
 
 /* ---------- steps ---------- */
